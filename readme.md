@@ -6,11 +6,10 @@
 
 
 ## How to run:
-    
-    `git clone https://github.com/Roy-Goldreich/MasterCard_Backend.git`
+`git clone https://github.com/Roy-Goldreich/MasterCard_Backend.git`
 
-    Go into the create directory MasterCard_Backend/MasterCard-Project
+Go into the create directory MasterCard_Backend/MasterCard-Project
 
-    run `dotnet run` in your terminal 
+Run `dotnet run` in your terminal 
    
 
