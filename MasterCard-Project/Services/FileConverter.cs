@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using System;
-using System.Data;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
@@ -29,7 +27,6 @@ namespace MasterCard_Project.Services
         {
             var dict = new Dictionary<string, object>();
 
-            //FillDictionaryFromJToken(dict, token, "$.");
             FillDictionaryFromJToken(dict, token, "$.");
 
             return dict;
@@ -198,7 +195,6 @@ namespace MasterCard_Project.Services
                 var index = getIndexFromPropertyName(propertyName);
                 if (dictBaseObject.ContainsKey(arrayName))
                 {
-                    //array allready present in the object
                     var array = (ArrayList)dictBaseObject[arrayName];
 
                     if (array.Count > index)
@@ -266,6 +262,8 @@ namespace MasterCard_Project.Services
             }
         }
 
+        //In our csv representation '.' is used to mark child property
+        //We add a '.' between to array indexes to help with parsing.
         private static string SantizeName(string propertyName) {
             return propertyName.Replace("][", "].[");
         }
